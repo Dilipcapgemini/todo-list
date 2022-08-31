@@ -25,7 +25,7 @@ const EditTask = ({modal, toggle, updateTask,taskObj, index}) => {
 
     const handleUpdate =(e) => {
        e.preventDefault();
-       let tempObj  = { "Name": taskName, "Description": description} 
+       let tempObj  = { "Name": taskName, "Description": description, "createdAt": taskObj.createdAt} 
        updateTask(tempObj, index)
     }
 
