@@ -1,4 +1,4 @@
-import React,  {useState} from 'react';
+import React,  {useEffect, useState} from 'react';
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -7,6 +7,14 @@ const CreateTask = ({modal, toggle, save}) => {
     // const [taskDate, setTaskDate] = useState ('');
     const [description, setDescription] = useState ('');
 
+    useEffect(() => {
+      if(!modal){
+        setTaskName('')
+        setDescription('')
+      }
+
+    }, [modal])
+    
     const handleChange =(e) =>{
 
     const {name, value} = e.target
@@ -33,7 +41,7 @@ const CreateTask = ({modal, toggle, save}) => {
          <form>
             <div className='form-group'>
             <label>Task Name</label>
-              <input type="text" className='form-control' value={taskName}onChange={handleChange} name="taskName" />
+              <input type="text" className='form-control' value={taskName} onChange={handleChange} name="taskName" />
             </div>
 
             {/* <div className='form-group'>
