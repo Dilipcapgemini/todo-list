@@ -47,8 +47,7 @@ const Todolist = () => {
 
     const handleSearch = (e) => {
         e.preventDefault()
-        //const { target: { value } } = e
-        console.log('e', e.target.value)
+        
         setTempSearch(e.target.value)
     }
 

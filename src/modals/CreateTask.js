@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const CreateTask = ({modal, toggle, save}) => {
     const [taskName, setTaskName] = useState ('');
-    // const [taskDate, setTaskDate] = useState ('');
     const [description, setDescription] = useState ('');
 
     useEffect(() => {
@@ -44,11 +43,6 @@ const CreateTask = ({modal, toggle, save}) => {
             <label>Task Name</label>
               <input type="text" className='form-control' value={taskName} onChange={handleChange} name="taskName" />
             </div>
-
-            {/* <div className='form-group'>
-            <label className='mt-2'> Task Date</label>
-            <input type="date" className='form-control' value={taskDate} onChange={handleChange} name="taskName" />
-           </div> */}
 
            <div className='form-group'>
            <label className='mt-2'>Description</label>

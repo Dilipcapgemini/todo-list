@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const EditTask = ({modal, toggle, updateTask,taskObj, index}) => {
     const [taskName, setTaskName] = useState ('');
-    // const [taskDate, setTaskDate] = useState ('');
     const [description, setDescription] = useState ('');
 
     const handleChange =(e) =>{
@@ -33,22 +32,15 @@ const EditTask = ({modal, toggle, updateTask,taskObj, index}) => {
         <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Edit Task</ModalHeader>
         <ModalBody>
-         
             <div className='form-group'>
             <label>Task Name</label>
               <input type="text" className='form-control' value={taskName} onChange={handleChange} name="taskName" />
             </div>
 
-            {/* <div className='form-group'>
-            <label className='mt-2'> Task Date</label>
-            <input type="date" className='form-control' value={taskDate} onChange={handleChange} name="taskName" />
-           </div> */}
-
            <div className='form-group'>
            <label >Description</label>
             <textarea rows="5" className='form-control mt-2' value = {description} onChange={handleChange} name="description" >  </textarea>
            </div>
-       
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={handleUpdate }>
