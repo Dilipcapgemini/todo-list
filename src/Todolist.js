@@ -24,7 +24,6 @@ const Todolist = () => {
     }
 
     const updateListArray =(obj, index) =>{
-        debugger;
         let tempList = taskList
         tempList[index] = obj
         localStorage.setItem ("taskList", JSON.stringify(tempList))
@@ -47,16 +46,13 @@ const Todolist = () => {
     const handleSearch = (e) => {
         e.preventDefault()
         //const { target: { value } } = e
-        console.log('e', e.target.value)
+       
         setTempSearch(e.target.value)
     }
 
     const customFilter = (item) => {
-
-        console.log('iotem', item, 'search', search)
-
         if(search ){
-            if(item.Name.indexOf(search)){
+            if(!item.Name.indexOf(search)){
                 return item
             }
         } else {
